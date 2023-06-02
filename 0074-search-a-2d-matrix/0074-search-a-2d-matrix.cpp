@@ -4,9 +4,26 @@ public:
         int row=matrix.size(),col=matrix[0].size();
         int m;
         int rowi=0,mid;
-        while(rowi<row){
-            if(matrix[rowi][col-1]>=x){
-                m=col;
+        m=row;
+        mid=m/2;
+        while(mid<m){
+            if(matrix[mid][0]==x){
+                return true;
+            }
+            if(matrix[mid][0]>x){
+                m=mid;
+                mid=mid/2;
+            }
+            else{
+                if(matrix[mid][0]<x){
+                    rowi=mid;
+                    mid=mid+((m+1-mid)/2);
+                }
+            }
+        }
+        //rowi=mid;
+        //printf("%d\n",rowi);
+        m=col;
                 mid=m/2;
                 while(mid<m){
                     if(matrix[rowi][mid]==x){
@@ -22,9 +39,6 @@ public:
                         }
                     }
                 }
-            }
-        rowi++;
-    }
     return false;
     }
     
