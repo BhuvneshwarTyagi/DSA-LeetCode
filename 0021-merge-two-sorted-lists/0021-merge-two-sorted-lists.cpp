@@ -24,15 +24,8 @@ public:
                     temp1=temp1->next;
                 }
                 else{
-                    if(temp1->val > temp2->val){
-                        ne->val=temp2->val;
-                        temp2=temp2->next;
-                    }
-                    else{
-                        ne->val=temp2->val;
-                        temp2=temp2->next;
-                        
-                    }
+                    ne->val=temp2->val;
+                    temp2=temp2->next;
                 }
                 if(tail==nullptr){
                         tail=ne;
