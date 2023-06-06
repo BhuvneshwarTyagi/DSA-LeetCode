@@ -19,54 +19,29 @@ public:
         ListNode* temp2 = list2;
         while(temp1!=nullptr && temp2!=nullptr){
                 ListNode *ne=new ListNode();
-                if(head==nullptr){
-                    head=ne;
-                }
                 if(temp1->val < temp2->val){
                     ne->val=temp1->val;
-                    if(tail==nullptr){
-                        tail=ne;
-                    }
-                    else{
-                        tail->next=ne;
-                        tail=ne;
-                    }
                     temp1=temp1->next;
                 }
                 else{
                     if(temp1->val > temp2->val){
                         ne->val=temp2->val;
-                        if(tail==nullptr){
-                            tail=ne;
-                        }
-                        else{
-                            tail->next=ne;
-                            tail=ne;
-                        }
                         temp2=temp2->next;
                     }
                     else{
                         ne->val=temp2->val;
-                        if(tail==nullptr){
-                            tail=ne;
-                        }
-                        else{
-                            tail->next=ne;
-                            tail=ne;
-                        }
                         temp2=temp2->next;
-                        ListNode *ne=new ListNode();
-                        ne->val=temp1->val;
-                        if(tail==nullptr){
-                            tail=ne;
-                        }
-                        else{
-                            tail->next=ne;
-                            tail=ne;
-                        }
-                        temp1=temp1->next;
+                        
                     }
                 }
+                if(tail==nullptr){
+                        tail=ne;
+                        head=ne;
+                    }
+                    else{
+                        tail->next=ne;
+                        tail=ne;
+                    }
             }
             ListNode* rem=(temp1!=NULL) ?temp1 : temp2; 
             while(rem!=nullptr){
