@@ -68,10 +68,11 @@ public:
                     }
                 }
             }
-            while(temp1!=nullptr){
+            ListNode* rem=(temp1!=NULL) ?temp1 : (temp2!=NULL ? temp2 : NULL); 
+            while(rem!=nullptr){
                 ListNode *ne=new ListNode();
-                ne->val=temp1->val;
-                temp1=temp1->next;
+                ne->val=rem->val;
+                rem=rem->next;
                 if(tail==nullptr){
                         tail=ne;
                         head=ne;
@@ -82,20 +83,7 @@ public:
                     }
                 
             }
-            while(temp2!=nullptr){
-                ListNode *ne=new ListNode();
-                ne->val=temp2->val;
-                temp2=temp2->next;
-                if(tail==nullptr){
-                    head=ne;
-                        tail=ne;
-                    }
-                    else{
-                        tail->next=ne;
-                        tail=ne;
-                    }
-                
-            }
+            
             return head;
     }
 };
