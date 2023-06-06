@@ -27,7 +27,7 @@ public:
                     ne->val=temp2->val;
                     temp2=temp2->next;
                 }
-                if(tail==nullptr){
+                if(head==nullptr){
                         tail=ne;
                         head=ne;
                     }
