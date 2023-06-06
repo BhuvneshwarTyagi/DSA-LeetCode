@@ -68,7 +68,7 @@ public:
                     }
                 }
             }
-            ListNode* rem=(temp1!=NULL) ?temp1 : (temp2!=NULL ? temp2 : NULL); 
+            ListNode* rem=(temp1!=NULL) ?temp1 : temp2; 
             while(rem!=nullptr){
                 ListNode *ne=new ListNode();
                 ne->val=rem->val;
