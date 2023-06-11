@@ -20,11 +20,11 @@ public:
         }
         temp=head;
         count-=n;
+         if(count==0){
+            return head=head->next;
+        }
         for(int i=1;i<count;i++){
             temp=temp->next;
-        }
-        if(count==0){
-            return head=head->next;
         }
         temp->next = temp->next->next;
         
